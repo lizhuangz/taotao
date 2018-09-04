@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>淘淘商城</title>
 </head>
 <body>
-hahahahaha
+<h2>淘淘商城管理服务接口</h2>
 </body>
 </html>

@@ -27,6 +27,38 @@
             <groupId>com.taotao</groupId>
             <artifactId>taotao-manager-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>taotao-common</artifactId>
+                    <groupId>com.taotao</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-content-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>taotao-manager-pojo</artifactId>
+                    <groupId>com.taotao</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>taotao-common</artifactId>
+                    <groupId>com.taotao</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-search-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>taotao-manager-pojo</artifactId>
+                    <groupId>com.taotao</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- Spring -->
         <dependency>
@@ -94,6 +126,21 @@
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
+        </dependency>
+        <!-- 添加FastDFS客户端的引用 -->
+        <dependency>
+            <groupId>fastdfs_client</groupId>
+            <artifactId>fastdfs_client</artifactId>
+            <version>1.25</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <!-- 文件上传组件 -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
         </dependency>
     </dependencies>
 
