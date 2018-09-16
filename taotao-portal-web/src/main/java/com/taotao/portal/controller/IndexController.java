@@ -15,10 +15,6 @@ import java.util.List;
 
 /**
  * 首页展示Controller
- * <p>Title: IndexController</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
  */
 @Controller
 public class IndexController {

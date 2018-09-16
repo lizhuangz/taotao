@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <!--
+        Spring整合Quartz进行配置遵循下面的步骤：
+        1：定义工作任务的Job和JobDetail
+        2：定义触发器Trigger，并将触发器与工作任务绑定
+        3：定义调度器，并将Trigger注册到Scheduler
+     -->
+    <!-- 1：定义工作任务的Job和JobDetail ，配置类似-->
+    <bean id="orderJob" class="com.taotao.order.quantz.OrderJob"></bean>
+
+    <bean name="orderJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="orderJob"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+
+    <!-- 2.2：定义触发器的bean，定义一个Cron的Trigger，一个触发器只能和一个任务进行绑定 -->
+    <bean id="orderCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <!-- 指定Tirgger绑定的Job -->
+        <property name="jobDetail" ref="orderJobDetail"/>
+        <!-- 指定Cron 的表达式 ，当前是每隔1s运行一次 -->
+        <property name="cronExpression" value="0/5 * * * * ?" />
+    </bean>
+
+    <!-- 3.定义调度器，并将Trigger注册到调度器中 -->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="orderCronTrigger"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

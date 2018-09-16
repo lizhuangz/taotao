@@ -51,7 +51,7 @@ public class ContentServiceImpl implements ContentService {
         criteria.andCategoryIdEqualTo(categoryId);
         List<TbContent> list = contentMapper.selectByExample(tbContentExample);
         //取查询结果
-        PageInfo<TbContent> pageInfo = new PageInfo<TbContent>(list);
+        PageInfo<TbContent> pageInfo = new PageInfo<>(list);
         EasyUIDataGridResult result = new EasyUIDataGridResult();
         result.setTotal(pageInfo.getTotal());
         result.setRows(list);

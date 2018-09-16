@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 	<context id="testTables" targetRuntime="MyBatis3">
-	
+
 		<!-- JavaBean 实现 序列化 接口 -->
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
 		</plugin>
@@ -15,13 +15,13 @@
         <plugin type="org.mybatis.generator.plugins.page.PaginationPlugin" />
         <!-- 自定义查询指定字段  -->
         <plugin type="org.mybatis.generator.plugins.field.FieldsPlugin" />
-        <!-- 开启支持内存分页   可生成 支持内存分布的方法及参数  
+        <!-- 开启支持内存分页   可生成 支持内存分布的方法及参数
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
         -->
         <!-- generate entity时，生成hashcode和equals方法
 		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
 		 -->
-		<!-- 此处是将Example改名为Criteria 当然 想改成什么都行~    -->      
+		<!-- 此处是将Example改名为Criteria 当然 想改成什么都行~    -->
         <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">  -->
 	        <!--<property name="searchString" value="Example$" />-->
 	        <!--&lt;!&ndash; 替换后-->
@@ -40,27 +40,27 @@
 	        <!--<property name="searchString" value="Mapper$" />-->
 	        <!--<property name="replaceString" value="Dao" />-->
         <!--</plugin>  -->
-        
- 
-		
+
+
+
 		<commentGenerator type="org.mybatis.generator.plugins.comment.MyCommentGenerator">
-			<!-- 是否去除自动生成的注释 true：是 ： false:否 
+			<!-- 是否去除自动生成的注释 true：是 ： false:否
 			<property name="suppressAllComments" value="true" />
 			-->
 		</commentGenerator>
-		
+
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://localhost:3306/taotao" userId="root"
 			password="123456">
 		</jdbcConnection>
 		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
-			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg" 
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"
 			userId="yycg"
 			password="yycg">
 		</jdbcConnection> -->
 
-		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
 			NUMERIC 类型解析为java.math.BigDecimal -->
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
@@ -89,7 +89,7 @@
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		
+
 	<!-- 指定数据库表 -->
 		<table schema="" tableName="tb_content"></table>
 		<table schema="" tableName="tb_content_category"></table>
@@ -104,3 +104,5 @@
 		<table schema="" tableName="tb_user"></table>
 	</context>
 </generatorConfiguration>
+
+

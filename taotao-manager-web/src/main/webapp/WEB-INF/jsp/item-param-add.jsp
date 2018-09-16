@@ -35,7 +35,7 @@
 		</ul>
 	</li>
 </div>
-<script style="text/javascript">
+<script>
 	$(function(){
 		TAOTAO.initItemCat({
 			fun:function(node){
@@ -52,7 +52,7 @@
 			  });
 			}
 		});
-		
+
 		$(".addGroup").click(function(){
 			  var temple = $(".itemParamAddTemplate li").eq(0).clone();
 			  $(this).parent().parent().append(temple);
@@ -67,11 +67,11 @@
 				  $(this).parent().remove();
 			  });
 		 });
-		
+
 		$("#itemParamAddTable .close").click(function(){
 			$(".panel-tool-close").click();
 		});
-		
+
 		$("#itemParamAddTable .submit").click(function(){
 			var params = [];
 			var groups = $("#itemParamAddTable [name=group]");
@@ -81,7 +81,7 @@
 				p.each(function(_i,_e){
 					var _val = $(_e).siblings("input").val();
 					if($.trim(_val).length>0){
-						_ps.push(_val);						
+						_ps.push(_val);
 					}
 				});
 				var _val = $(e).siblings("input").val();
@@ -89,7 +89,7 @@
 					params.push({
 						"group":_val,
 						"params":_ps
-					});					
+					});
 				}
 			});
 			var url = "/item/param/save/"+$("#itemParamAddTable [name=cid]").val();

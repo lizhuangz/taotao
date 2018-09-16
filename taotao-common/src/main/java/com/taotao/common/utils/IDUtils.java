@@ -37,11 +37,6 @@ public class IDUtils {
 	public static long genItemId() {
 		//取当前时间的长整形值包含毫秒
 		long millis = System.currentTimeMillis();
-		Date date = new Date(System.currentTimeMillis());
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String nowSystemTime = sdf.format(date);
-		System.out.println("当前系统时间为" + nowSystemTime);
-
 		//long millis = System.nanoTime();
 		//加上两位随机数
 		Random random = new Random();

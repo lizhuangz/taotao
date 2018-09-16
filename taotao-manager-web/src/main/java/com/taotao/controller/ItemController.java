@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 /**
  * Created by 李壮壮 on 2018/8/26.
  */
@@ -36,8 +39,44 @@ public class ItemController {
 
     @RequestMapping(value = "/item/save", method = RequestMethod.POST)
     @ResponseBody
-    public TaotaoResult addItem(TbItem item, String desc){
-        TaotaoResult taotaoResult = itemService.addItem(item ,desc);
+    public TaotaoResult addItem(TbItem item, String desc, String itemParams){
+        TaotaoResult taotaoResult = itemService.addItem(item ,desc, itemParams);
+        return taotaoResult;
+    }
+
+    @RequestMapping(value = "/item/delete")
+    @ResponseBody
+    public TaotaoResult deleteItem(String ids){
+        String[] idStringList = ids.split(",");
+        LinkedList<Long> idList = new LinkedList<>();
+        for (String id : idStringList) {
+            idList.add(Long.parseLong(id));
+        }
+        TaotaoResult taotaoResult = itemService.deleteItemByIds(idList);
+        return taotaoResult;
+    }
+
+    @RequestMapping(value = "/item/reshelf")
+    @ResponseBody
+    public TaotaoResult reshelfItem(String ids){
+        String[] idStringList = ids.split(",");
+        LinkedList<Long> idList = new LinkedList<>();
+        for (String id : idStringList) {
+            idList.add(Long.parseLong(id));
+        }
+        TaotaoResult taotaoResult = itemService.reshelfItemByIds(idList);
+        return taotaoResult;
+    }
+
+    @RequestMapping(value = "/item/instock")
+    @ResponseBody
+    public TaotaoResult instockItem(String ids){
+        String[] idStringList = ids.split(",");
+        LinkedList<Long> idList = new LinkedList<>();
+        for (String id : idStringList) {
+            idList.add(Long.parseLong(id));
+        }
+        TaotaoResult taotaoResult = itemService.instockItemByIds(idList);
         return taotaoResult;
     }
 }

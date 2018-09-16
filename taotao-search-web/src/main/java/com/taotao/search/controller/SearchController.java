@@ -22,7 +22,6 @@ public class SearchController {
 
     @RequestMapping("/search")
     public String search(@RequestParam("q") String queryString, @RequestParam(defaultValue = "1") Integer page, Model model) throws Exception {
-        int a = 1 / 0 ;
         queryString = new String(queryString.getBytes("iso8859-1"), "utf-8");
         SearchResult search = searchService.search(queryString, page, SEARCH_RESULT_ROWS);
         model.addAttribute("query", queryString);

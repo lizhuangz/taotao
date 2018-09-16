@@ -15,14 +15,6 @@ import org.springframework.stereotype.Repository;
 import com.taotao.common.pojo.SearchItem;
 import com.taotao.common.pojo.SearchResult;
 
-/**
- * 查询索引库商品dao
- * <p>Title: SearchDao</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p>
- *
- * @version 1.0
- */
 @Repository
 public class SearchDao {
 
